@@ -70,31 +70,8 @@ missing
 *.m4
 compile
 
-
-#gtest
-src/gtest/build-aux/config.h
-src/gtest/build-aux/config.h.in
-src/gtest/lib/
-src/gtest/scripts/gtest-config
-src/gtest/src/.dirstamp
-src/gtest/Makefile.in
-src/gtest/aclocal.m4
-src/gtest/configure
-src/gtest/Makefile
-src/gtest/config.log
-src/gtest/config.status
-src/gtest/libtool
-src/gtest/samples/.deps/sample1.Plo
-src/gtest/samples/.deps/sample1_unittest.Po
-src/gtest/samples/.deps/sample2.Plo
-src/gtest/samples/.deps/sample4.Plo
-src/unittest_*
-src/test-suite.log
-test-driver
-
 #bin
-src/cceph_osd
-src/tmp_client
+scripts/bhook
+test/Makefile.env
+test/RunEnv.sh
 
-#other
-data
