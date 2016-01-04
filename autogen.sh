@@ -11,6 +11,5 @@ libtoolize --force --copy
 aclocal
 autoconf
 automake -a --add-missing -Wall
-( cd module/gtest && autoreconf -fvi; )
 
 ./configure
