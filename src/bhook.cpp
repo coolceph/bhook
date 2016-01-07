@@ -59,6 +59,16 @@ int attach_func(char *func_name, void *hook_func)
 {
 	return Core::getInstance()->AttachFunc(func_name, hook_func);
 }
+
+int attach_and_enable_func(char *func_name, void *hook_func)
+{
+	int ret =  Core::getInstance()->AttachFunc(func_name, hook_func);
+    if (ret == 0) {
+        ret = fault_enable(func_name, 100, 0, NULL);
+    }
+    return ret;
+}
+
 int detach_func(char *func_name)
 {
 	return Core::getInstance()->DetachFunc(func_name);
@@ -72,6 +82,15 @@ void *get_real_func(char *func_name)
 int attach_func_lib(char *func_name, void *hook_func)
 {
 	return Core::getInstance()->AttachFuncLib(func_name, hook_func, NULL);
+}
+
+int attach_and_enable_func_lib(char *func_name, void *hook_func)
+{
+	int ret =  Core::getInstance()->AttachFuncLib(func_name, hook_func, NULL);
+    if (ret == 0) {
+        ret = fault_enable(func_name, 100, 0, NULL);
+    }
+    return ret;
 }
 int detach_func_lib(char *func_name)
 {

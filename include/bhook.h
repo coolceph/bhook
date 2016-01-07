@@ -83,6 +83,20 @@ int fault_disable(const char *name);
 int attach_func(char *func_name, void *hook_func);
 
 /**
+ * @brief 进行系统库函数的挂载, 同时执行enable操作，概率100%
+ *
+ * @param [in/out] func_name   : char*
+ * @param [in/out] hook_func   : void*
+ * @return  int 
+ * @retval   
+ * @see 
+ * @note 
+ * @author yuandong1222
+ * @date 2016/01/17
+**/
+int attach_and_enable_func(char *func_name, void *hook_func);
+
+/**
  * @brief 进行系统函数的卸载
  *
  * @param [in/out] func_name   : char*
@@ -122,6 +136,20 @@ void *get_real_func(char *func_name);
  * @date 2011/07/05 11:53:17
 **/
 int attach_func_lib(char *func_name, void *hook_func);
+
+/**
+ * @brief 进行静态库函数的挂载, 同时执行enable操作，概率100%
+ *
+ * @param [in/out] func_name   : char*
+ * @param [in/out] hook_func   : void*
+ * @return  int 
+ * @retval  成功返回0，错误返回非0 
+ * @see 
+ * @note 
+ * @author yuandong1222
+ * @date 2016/01/17
+**/
+int attach_and_enable_func_lib(char *func_name, void *hook_func);
 
 /**
  * @brief 取消静态库函数的挂载
